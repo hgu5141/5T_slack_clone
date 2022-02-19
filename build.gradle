@@ -56,15 +56,15 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-redis:1.4.6.RELEASE'
 
     //AWS
-//    implementation platform('com.amazonaws:aws-java-sdk-bom:1.11.228')
-//    implementation 'com.amazonaws:aws-java-sdk-s3'
+    implementation platform('com.amazonaws:aws-java-sdk-bom:1.11.228')
+    implementation 'com.amazonaws:aws-java-sdk-s3'
 
-    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-aws
+//     https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-aws
 //s3
-//    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-aws', version: '2.2.6.RELEASE'
-//
-//    implementation platform('com.amazonaws:aws-java-sdk-bom:1.11.228')
-//    implementation 'com.amazonaws:aws-java-sdk-s3'
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-aws', version: '2.2.6.RELEASE'
+
+    implementation platform('com.amazonaws:aws-java-sdk-bom:1.11.228')
+    implementation 'com.amazonaws:aws-java-sdk-s3'
 
 
 

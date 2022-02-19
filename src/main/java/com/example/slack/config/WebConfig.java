@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
     @Bean
     public FilterRegistrationBean getFilterRegistrationBean() {
-        FilterRegistrationBean registrationBean = new FilterRegistrationBean<>(new com.example.slack.config.CORSFilter());
+        FilterRegistrationBean registrationBean = new FilterRegistrationBean<>(new CORSFilter());
         registrationBean.addUrlPatterns("/**");
         return registrationBean;
     }
@@ -30,5 +30,13 @@ public class WebConfig implements WebMvcConfigurer {
 //                .allowCredentials(true)
                 .allowCredentials(false)
                 .maxAge(MAX_AGE_SECS);
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry
+                .addResourceHandler("/image/**")
+                .addResourceLocations("file:///home/ubuntu/image/");
+//                .addResourceLocations("file:///Users/jeong-yeongbin/Desktop/project/Team-11-Back/src/main/resources/static/image/");
     }
 }
